@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="css/bootstrap.css">
+
+<style>
+.navbar {
+	border-radius: 0;
+}
+</style>
+<script src="js/angular/angular.js"></script>
+<script src="js/angular/angular-route.js"></script>
+<script src="js/app.js"></script>
+
+<!-- Controllers -->
+<script src="js/MainController.js"></script>
+<script src="js/loginController.js"></script>
+<script src="js/signupController.js"></script>
+<script src="js/profileController.js"></script>
+<script src="js/aboutController.js"></script>
+
+
+<!-- Service -->
+<script src="js/service.js"></script>
+</head>
+
+<body ng-app="webApp" ng-controller="MainController">
+
+	<nav class="navbar navbar-inverse" role="navigation">
+		<div class="navbar-header">
+			<a class="navbar-brand">Spring MVC Project</a>
+		</div>
+		<ul class="nav navbar-nav">
+			<li><a ng-click="login()" ng-show="!isLoggedIn">Login</a></li>
+			<li><a ng-click="home()" ng-show="isLoggedIn">Home</a></li>
+			<li><a ng-click="about();">About</a></li>
+			<li><a ng-click="logout()" ng-show="isLoggedIn">Logout</a></li>
+		</ul>
+	</nav>
+
+	<div class="container">
+		<div ng-view></div>
+	</div>
+
+	<div class="text-center">
+		<p>Sping MVC Project by <a href="https://www.linkedin.com/in/prateek-mishra-61aa4658" target="_blank">Prateek Mishra</a></p>
+	</div>
+
+</body>
+</html>
